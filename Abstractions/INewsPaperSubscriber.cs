@@ -6,6 +6,6 @@ namespace ObserverPattern.Interfaces
 {
     public interface INewsPaperSubscriber
     {
-        void Update();
+        void Update(double monthlyPayment, string newsPaperName, DateTime deliveryDate);
     }
 }
