@@ -6,13 +6,10 @@ namespace ObserverPattern.Models
 {
     public class NewsPaperOrganization : INewsPaperOrganization
     {
-        private string _organizationName;
-
-        public NewsPaperOrganization(string newsPaperName, double monthlySubscriptionCost, 
-                                    DateTime deliveryDate, DateTime chargeCostDate, string organizationName) 
+        public NewsPaperOrganization(string newsPaperName, double monthlySubscriptionCost, DateTime deliveryDate, DateTime chargeCostDate) 
                                     : base(newsPaperName, monthlySubscriptionCost, deliveryDate, chargeCostDate)
         {
-            _organizationName = organizationName;
+
         }
 
     }

@@ -35,14 +35,14 @@ namespace ObserverPattern
             _subscribers.Remove(subscriber);
         }
 
-        private void PaymentNotification()
+        public void PaymentNotification()
         {
             foreach (var subscriber in _subscribers)
             {
                 subscriber.PaymentUpdate(_monthlySubscriptionCost, _newsPaperName, _deliveryDate, _chargeCostDate);
             }
 
-            Console.WriteLine("Subscribers Notified!");
+            Console.WriteLine("Subscribers Notified! \n");
         }
     }
 }
