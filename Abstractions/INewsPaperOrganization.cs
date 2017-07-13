@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ObserverPattern
 {
-    public abstract class NewsPaperOrganization
+    public abstract class INewsPaperOrganization
     {
         private List<INewsPaperSubscriber> _subscribers = new List<INewsPaperSubscriber>();
 
@@ -17,9 +17,9 @@ namespace ObserverPattern
 
         private DateTime _chargeCostDate;
 
-        public NewsPaperOrganization(string name, double monthlySubscriptionCost, DateTime deliveryDate, DateTime chargeCostDate)
+        public INewsPaperOrganization(string newsPaperName, double monthlySubscriptionCost, DateTime deliveryDate, DateTime chargeCostDate)
         {
-            _newsPaperName = name;
+            _newsPaperName = newsPaperName;
             _monthlySubscriptionCost = monthlySubscriptionCost;
             _deliveryDate = deliveryDate;
             _chargeCostDate = chargeCostDate;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ObserverPattern.Models;
+using System;
 
 namespace ObserverPattern
 {
@@ -6,7 +7,8 @@ namespace ObserverPattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            NewsPaperSubscriber JesusChrist = new NewsPaperSubscriber("Jesus Christ");
+
         }
     }
 }
