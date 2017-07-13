@@ -15,26 +15,14 @@ namespace ObserverPattern
 
         private DateTime _deliveryDate;
 
-        public NewsPaperOrganization(string name, double monthlySubscriptionCost, DateTime deliveryDate)
+        private DateTime _chargeCostDate;
+
+        public NewsPaperOrganization(string name, double monthlySubscriptionCost, DateTime deliveryDate, DateTime chargeCostDate)
         {
             _newsPaperName = name;
             _monthlySubscriptionCost = monthlySubscriptionCost;
             _deliveryDate = deliveryDate;
-        }
-
-        public string GetNewsPaperName()
-        {
-            return _newsPaperName;
-        }
-
-        public double GetMonthlySubscriptionCost()
-        {
-            return _monthlySubscriptionCost;
-        }
-
-        public DateTime GetDeliveryDate()
-        {
-            return _deliveryDate;
+            _chargeCostDate = chargeCostDate;
         }
 
         public void AttachSubscriber(INewsPaperSubscriber subscriber)
@@ -47,11 +35,11 @@ namespace ObserverPattern
             _subscribers.Remove(subscriber);
         }
 
-        public void Notify()
+        private void PaymentNotification()
         {
             foreach (var subscriber in _subscribers)
             {
-                subscriber.Update(GetMonthlySubscriptionCost(), GetNewsPaperName(), GetDeliveryDate());
+                subscriber.PaymentUpdate(_monthlySubscriptionCost, _newsPaperName, _deliveryDate, _chargeCostDate);
             }
 
             Console.WriteLine("Subscribers Notified!");

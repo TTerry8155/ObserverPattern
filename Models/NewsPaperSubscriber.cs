@@ -7,11 +7,18 @@ namespace ObserverPattern.Models
 {
     public class NewsPaperSubscriber : INewsPaperSubscriber
     {
-        private string _name;
+        private string _fullName;
 
-        public void Update(double MonthlyPayment, string NewsPaperName)
+        public NewsPaperSubscriber(string fullName)
         {
-            Console.WriteLine("We have received your subscription fee of {0}, and you will recieve a copy of {2} on the 15th of every month");
+            _fullName = fullName;
+        }
+
+        public void PaymentUpdate(double MonthlyPayment, string NewsPaperName, DateTime deliveryDate, DateTime chargeCostDate)
+        {
+            string NotificationStatement = "Thanks {0}! We have received your subscription fee of {1} on {2}, and you will recieve a copy of {3} on {4}";
+            Console.WriteLine(NotificationStatement, 
+                             _fullName, MonthlyPayment, chargeCostDate, NewsPaperName, deliveryDate);
         }
     }
 }

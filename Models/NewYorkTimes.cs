@@ -6,7 +6,8 @@ namespace ObserverPattern.Models
 {
     public class NewYorkTimes : NewsPaperOrganization
     {
-        public NewYorkTimes(string name, double monthlySubscriptionCost) : base(name, monthlySubscriptionCost)
+        public NewYorkTimes(string name, double monthlySubscriptionCost, DateTime deliveryDate, DateTime chargeCostDate) 
+            : base(name, monthlySubscriptionCost, deliveryDate, chargeCostDate)
         {
            
         }
