@@ -35,6 +35,8 @@ namespace ObserverPattern
             {
                 subscriber.Update();
             }
+
+            Console.WriteLine("Subscribers Notified!");
         }
     }
 }
